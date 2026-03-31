@@ -1,5 +1,6 @@
 package com.arya.bookmanagerjpa.domain.dtos;
 
+import com.arya.bookmanagerjpa.domain.entities.Author;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class AuthorDto {
-    String name ;
-    Integer age;
+public class BookDto {
+    String isbn;
+    Author author;
+    String title;
 }
-

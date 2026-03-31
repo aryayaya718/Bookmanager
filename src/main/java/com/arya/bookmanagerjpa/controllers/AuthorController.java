@@ -18,10 +18,10 @@ public class AuthorController {
         this.authorService=authorService;
     }
     @PostMapping
-   public ResponseEntity<AuthorDto>SaveController(@RequestBody AuthorDto authorDto) {
+   public ResponseEntity<AuthorDto> CreateAuthor(@RequestBody AuthorDto authorDto) {
         Author author = new Author(null, authorDto.getAge(), authorDto.getName());
-        Author saved = authorService.save(author);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new AuthorDto(saved.getName(), saved.getAge()));
+        Author savedAuthor = authorService.save(author);
+        return ResponseEntity.status(HttpStatus.CREATED).body(new AuthorDto(savedAuthor.getName(), savedAuthor.getAge()));
     }
 }
 
